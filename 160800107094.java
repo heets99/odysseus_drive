@@ -1,5 +1,6 @@
 import java.util.*; 
-import java.lang.*; 
+import java.lang.*;
+import java.util.Scanner.*;
   
 public class Main{ 
   
@@ -8,7 +9,7 @@ public class Main{
     public static void countCurrency(int amount) 
     { 
         int[] notes = new int[]{ 2000, 500, 200, 100, 50, 20, 10}; 
-        int[] noteCounter = new int[9]; 
+        int[] noteCounter = new int[7]; 
        
         // count notes using Greedy approach 
         for (int i = 0; i < 7; i++) { 
@@ -30,9 +31,18 @@ public class Main{
       
     // driver function  
     public static void main(String argc[]){ 
-        int amount = 5100; 
-        countCurrency(amount); 
-    } 
+        Scanner sc=new Scanner(System.in);
+        
+        int amount = sc.nextInt();
+        if(amount%10==0)
+        {
+            countCurrency(amount);
+        }
+        else
+        {
+            System.out.println("amount should be in multiple of 10 only");
+        }
+     }
+    
       
-    /* This code is contributed by Sagar Shukla */
 } 
